@@ -1,1 +1,1 @@
-web: gunicorn tejassateesh.wsgi
+web: gunicorn swe1app.wsgi
