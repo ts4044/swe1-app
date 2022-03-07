@@ -1,15 +1,13 @@
 language: python
-
-  python:
-    - 3.8
-
-  install:
-    - pip install -r requirements.txt
-
-  script:
-    - python -m black . --check
-    - python -m flake8
-    - coverage run manage.py test
-
-  after_success:
-    - coveralls
+python:
+- 3.10
+env:
+- DJANGO=4.2.0
+install:
+- pip install -r requirements.txt
+script:
+- python -m black . --check
+- python -m flake8
+- coverage run manage.py test
+after_success:
+- coveralls
