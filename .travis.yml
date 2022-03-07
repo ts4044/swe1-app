@@ -11,7 +11,7 @@ install:
 
 script:
   - black . --check
-  - flake8 ... --count
+  - flake8 --count
   - coverage run manage.py test
 
 after_success:
