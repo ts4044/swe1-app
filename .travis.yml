@@ -1,13 +1,18 @@
 language: python
+
 python:
-- "3.9"
+  - "3.9"
+
 env:
-- DJANGO=4.2.0
+  - DJANGO=4.2.0
+
 install:
-- pip install -r requirements.txt
+  - pip install -r requirements.txt
+
 script:
-- python -m black . --check
-- python -m flake8
-- coverage run manage.py test
+  - black . --check
+  - flake8 --count
+  - coverage run manage.py test
+
 after_success:
-- coveralls
+  - coveralls
